@@ -36,6 +36,11 @@ function Update () {
 		RightWall = true;
 	}
 	
+	if (transform.position.x <leftmargin || transform.position.x > rightmargin)
+	{
+		transform.Translate(Vector3.down);
+	}
+	
 	if (LeftWall == true)
 	{
 		goRight();
