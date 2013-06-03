@@ -25,6 +25,7 @@ function OnTriggerEnter(other:Collider)
 	
 	if(other.gameObject.tag=="health")
 	{
+		health+=5;
 		Destroy(other.gameObject);
 	}
 
