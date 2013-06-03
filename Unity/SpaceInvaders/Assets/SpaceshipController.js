@@ -12,14 +12,14 @@ var theme:GUISkin;
 
 static var playerName: String = "";
 
-var speedShot:boolean = true;
+var speedShot:boolean = false;
 
 
 function OnTriggerEnter(other:Collider)
 {
 	if(other.gameObject.tag=="enemyLaser")
 	{
-		health++;
+		health--;
 		Destroy(other.gameObject);
 	}
 	
@@ -96,8 +96,8 @@ function Update () {
 function SetSpeedShot() {
 	// speedshot will get activated
 	speedShot = true;
-	// speedshot will inactivate after 2 seconds have passed
-	Invoke("UnsetSpeedShot", 0);
+	// speedshot will inactivate after 4 seconds have passed
+	Invoke("UnsetSpeedShot", 4);
 }
 
 function UnsetSpeedShot() {
